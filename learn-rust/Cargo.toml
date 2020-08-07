@@ -1,0 +1,8 @@
+[package]
+name = "learn-rust"
+version = "0.1.0"
+authors = ["maxrousseau <maximerousseau08@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rand = "0.5.5"
