@@ -15,10 +15,15 @@ functions to accoplish its task.
 Functions can communicate data through arguments which are declared at the
 definition of such function.
 
-M
+1.4
+
+Symbolic constants: 
+
+1.5
 
 
- */
+*/
+
 #include "stdio.h"
 
 void cel_to_far()
@@ -43,18 +48,42 @@ void cel_to_far()
   
 }
 
+// symbolic constants, these are not variables, the values cannot be changed
+#define UPPER 300
+#define LOWER 0
+#define STEP 20
 
-
-int main()
+void table()
 {
-
-  printf("Hello, World\n"); // 1.1
-
-  cel_to_far(); // 1.2
-
-  // continue @ section 1.3
+  int fahr;
   
-  return 0;
+  for (fahr = UPPER; fahr >= LOWER; fahr = fahr - STEP)
+	{
+	  printf("%3d\t%6.1f\n",fahr, (5.0/9.0)*(fahr-32));
+	}
 }
 
+void cat_clone()
+{
+  int c;
+  
+  while ((c = getchar()) != EOF)
+	{
+	  putchar(c);
+	}
+  
+  printf("EOF: %i\n", c); //EOF = -1 ...
+  
+}
 
+int main(void)
+{
+  // 1.1 printf("Hello World\n");
+  // 1.2  cel_to_far();
+  // 1.3 - 1.4 table();
+  // section 1.5
+  cat_clone(); // pipe text stream into ./a.out to print text
+  //continue 1.5.2
+
+  return 0;
+}
