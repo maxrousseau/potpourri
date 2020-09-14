@@ -1,0 +1,15 @@
+Install cmake with: pip install cmake
+		by far the easiest way to get an up to date version
+
+PROJECT/
+ - readme
+ - test/
+ - src/
+   - build/
+   - code.cpp
+   - CMakeLists.txt
+
+To use CMake
+   first: mkdir build // you need a place for the build
+   then to build: cmake --install build //from the source directory will workfor cmake 3.15+
+   

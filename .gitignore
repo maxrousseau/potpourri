@@ -1,1 +1,4 @@
 learn-rust/target
+cpp/build
+cpp/samples
+cpp/CMakeFiles

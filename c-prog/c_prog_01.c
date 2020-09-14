@@ -21,7 +21,6 @@ Symbolic constants:
 
 1.5
 
-
 */
 
 #include "stdio.h"
