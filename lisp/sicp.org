@@ -1,0 +1,47 @@
+#+TITLE: Attempt at SICP with Racket
+
+* References
+
+- lecture series: [[https://www.youtube.com/playlist?list=PLhMnuBfGeCDNgVzLPxF9o5UNKG1b-LFY9][Berkeley CS61A]]
+- book: [[https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-9.html][SICP website]]
+- book companion series: [[https://www.youtube.com/playlist?list=PLVFrD1dmDdvdvWFK8brOVNL7bKHpE-9w0][playlist]]
+- [[https://beautifulracket.com/][Beautiful Racket]]
+
+* 1.1
+
+Notes on lisp (more precisely scheme) is that for most S-expressions, they will
+be evaluated as a `define` is one of such exceptions called a special form and
+it will not evaluate the expression in order. There are about 12 of them in
+scheme.
+
+Terminology: for the following snippet
+
+#+BEGIN_SRC scheme
+(define (square x)
+    (* x x))
+(square (+ 2 3))
+#+END_SRC
+
+x -> formal parameter
+(* x x) -> body
+(+ 2 3) -> the argument expression
+    5 -> the actual argument value
+
+The lisp/scheme interpreter evaluates the expression by a recursive process
+called tree accumulation.
+
+1.1.5 - lisp uses applicative-order evaluation (eval and apply) instead of
+normal order evaluation (fully expand then reduce). There are a few advantage,
+namely the efficiency but also because normal order evaluation becomes
+complicated when the program can't be modeled by substitution.
+
+@NOTE - continue at section 1.1.6
+A case analysis is called with cond - basically the case/switch statements. The
+else can also be used in the cond expresssions. The if is a special form and
+evaluates differently.
+#+BEGIN_SRC scheme
+(define (abs x)
+  (cond ((> x 0) x)
+        ((= x 0) x)
+        ((< x 0) -x)))
+#+END_SRC
